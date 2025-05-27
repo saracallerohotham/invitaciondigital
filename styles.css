@@ -1,0 +1,202 @@
+/* ---------------------------------- */
+/* 🎨 PALETA DE COLORES (VARIABLES)   */
+/* ---------------------------------- */
+:root {
+  --color-fondo-principal: #fffdf8; /* blanco marfil */
+  --color-texto-principal: #4a4036; /* marrón oscuro refinado */
+  --color-texto-secundario: #6b5e54; /* marrón cálido */
+  --color-acento: #b5a78a; /* beige neutro profundo */
+  --color-fondo-secundario: #d9d8bb; /* beige oliva */
+  --color-boton: #9e9e85; /* botón principal */
+  --color-boton-hover: #a7987d; /* botón hover */
+  --color-fondo-footer: #f3f1ea; /* beige grisáceo claro */
+  --overlay-suave: rgba(255, 253, 248, 0.6); /* filtro portada */
+  --overlay-suave-footer: rgba(255, 253, 248, 0.3); /* filtro footer */
+}
+
+/* ---------------------------- */
+/* 🔤 TIPOGRAFÍA GENERAL        */
+/* ---------------------------- */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Encabezados */
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--color-texto-principal);
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+/* Frases destacadas */
+blockquote,
+.frase-romantica {
+  font-family: "Crimson Pro", serif;
+  font-style: italic;
+  color: var(--color-texto-secundario);
+}
+
+/* ---------------------------- */
+/* 🖼️ SECCIÓN HERO (Portada)   */
+/* ---------------------------- */
+.portada {
+  background-image: url("assets/parejitacasamiento.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-suave);
+  z-index: 1;
+}
+
+/* ---------------------------- */
+/* 📄 INTRODUCCIÓN              */
+/* ---------------------------- */
+.intro {
+  background-color: var(--color-fondo-principal);
+  color: var(--color-acento);
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.intro h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.intro h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 20px;
+}
+
+/* ---------------------------- */
+/* 📌 SECCIONES SECUNDARIAS     */
+/* ---------------------------- */
+.contador,
+.detalles,
+.confirmacion {
+  padding: 40px 20px;
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-fondo-principal);
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Contador */
+#cuenta-regresiva {
+  font-size: 40px;
+  letter-spacing: 6px;
+  font-weight: 400;
+  color: var(--color-fondo-principal);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.etiquetas {
+  display: block;
+  font-size: 14px;
+  color: var(--color-fondo-principal);
+  margin-top: 8px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* ---------------------------- */
+/* 📍 MAPA                      */
+/* ---------------------------- */
+.mapa {
+  padding: 40px 20px;
+  background-color: var(--color-fondo-footer);
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.mapa h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--color-titulo-seccion);
+}
+
+/* ---------------------------- */
+/* 📩 BOTÓN CONFIRMACIÓN        */
+/* ---------------------------- */
+.btn {
+  display: inline-block;
+  background-color: var(--color-boton);
+  color: var(--color-fondo-principal);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: "Work Sans", sans-serif;
+}
+
+.btn:hover {
+  background-color: var(--color-boton-hover);
+}
+
+/* ---------------------------- */
+/* 🌅 FOOTER CON IMAGEN         */
+/* ---------------------------- */
+.footerimg {
+  background-image: url("assets/delamano.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.footerimg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-suave-footer);
+  z-index: 1;
+}
+
+/* ---------------------------- */
+/* 👣 FOOTER FINAL              */
+/* ---------------------------- */
+footer {
+  padding: 20px;
+  background: var(--color-fondo-footer);
+  font-size: 20px;
+  color: var(--color-texto-principal);
+  font-family: "Cormorant Garamond", serif;
+}
