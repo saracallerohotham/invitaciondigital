@@ -27,6 +27,27 @@ body {
   line-height: 1.6;
 }
 
+/* ---------------------------- */
+/* 🖼️ SECCIÓN HERO (Portada)   */
+/* ---------------------------- */
+.portada {
+  background-image: url("assets/parejitacasamiento.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-suave);
+  z-index: 1;
+}
+
 /* Encabezados */
 h1,
 h2,
@@ -56,27 +77,6 @@ blockquote,
   font-family: "Crimson Pro", serif;
   font-style: italic;
   color: var(--color-texto-secundario);
-}
-
-/* ---------------------------- */
-/* 🖼️ SECCIÓN HERO (Portada)   */
-/* ---------------------------- */
-.portada {
-  background-image: url("assets/parejitacasamiento.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  width: 100%;
-  position: relative;
-  isolation: isolate;
-}
-
-.portada::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--overlay-suave);
-  z-index: 1;
 }
 
 /* ---------------------------- */
@@ -123,6 +123,24 @@ blockquote,
   font-weight: 400;
   color: var(--color-fondo-principal);
   font-family: "Cormorant Garamond", serif;
+}
+
+@media (max-width: 600px) {
+  .contador {
+    padding: 40px 32px; /* más margen lateral */
+  }
+
+  #cuenta-regresiva {
+    font-size: 32px; /* un poco más pequeño en móvil */
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    white-space: nowrap; /* evita que se corte en varias líneas */
+    overflow-x: auto; /* en caso de que sea demasiado largo */
+  }
+
+  .etiquetas {
+    font-size: 12px;
+  }
 }
 
 .etiquetas {
