@@ -18,7 +18,7 @@
 /* 🔤 TIPOGRAFÍA GENERAL        */
 /* ---------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-fondo-principal);
@@ -40,6 +40,15 @@ body {
   isolation: isolate;
 }
 
+.portada-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .portada::after {
   content: "";
   position: absolute;
@@ -48,128 +57,44 @@ body {
   z-index: 1;
 }
 
-/* Encabezados */
-h1,
-h2,
-h3 {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--color-texto-principal);
+/* Frases */
+.frase {
+  background-color: var(--color-fondo-footer);
+  color: var(--color-texto-secundario);
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-h1 {
-  font-size: 44px;
-  font-weight: 500;
+.frase::before {
+  content: "❝";
+  font-size: 50px;
+  color: var(--color-acento);
+  position: absolute;
+  top: -20px;
+  left: 20px;
 }
 
-h2 {
-  font-size: 36px;
-  font-weight: 400;
+.frase::after {
+  content: "❞";
+  font-size: 50px;
+  color: var(--color-acento);
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
 }
 
-h3 {
-  font-size: 28px;
-  font-weight: 500;
-}
-
-/* Frases destacadas */
-blockquote,
-.frase-romantica {
+blockquote {
   font-family: "Crimson Pro", serif;
   font-style: italic;
-  color: var(--color-texto-secundario);
+  margin: 0;
+  line-height: 1.8;
 }
 
-/* ---------------------------- */
-/* 📄 INTRODUCCIÓN              */
-/* ---------------------------- */
-.intro {
-  background-color: var(--color-fondo-principal);
-  color: var(--color-acento);
-  padding: 40px 20px;
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-}
-
-.intro h1 {
-  font-size: 44px;
-  margin-bottom: 10px;
-}
-
-.intro h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.intro p {
-  font-size: 20px;
-}
-
-/* ---------------------------- */
-/* 📌 SECCIONES SECUNDARIAS     */
-/* ---------------------------- */
-.contador,
-.detalles,
-.confirmacion {
-  padding: 40px 20px;
-  background-color: var(--color-fondo-secundario);
-  color: var(--color-fondo-principal);
-  font-family: "Cormorant Garamond", serif;
-}
-
-/* Contador */
-#cuenta-regresiva {
-  font-size: 40px;
-  letter-spacing: 6px;
-  font-weight: 400;
-  color: var(--color-fondo-principal);
-  font-family: "Cormorant Garamond", serif;
-}
-
-@media (max-width: 600px) {
-  .contador {
-    padding: 40px 32px; /* más margen lateral */
-  }
-
-  #cuenta-regresiva {
-    font-size: 32px; /* un poco más pequeño en móvil */
-    letter-spacing: 4px;
-    word-spacing: 4px;
-    white-space: nowrap; /* evita que se corte en varias líneas */
-    overflow-x: auto; /* en caso de que sea demasiado largo */
-  }
-
-  .etiquetas {
-    font-size: 12px;
-  }
-}
-
-.etiquetas {
-  display: block;
-  font-size: 14px;
-  color: var(--color-fondo-principal);
-  margin-top: 8px;
-  font-family: "Cormorant Garamond", serif;
-}
-
-/* ---------------------------- */
-/* 📍 MAPA                      */
-/* ---------------------------- */
-.mapa {
-  padding: 40px 20px;
-  background-color: var(--color-fondo-footer);
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-}
-
-.mapa h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: var(--color-titulo-seccion);
-}
-
-/* ---------------------------- */
-/* 📩 BOTÓN CONFIRMACIÓN        */
-/* ---------------------------- */
+/* Botones */
 .btn {
   display: inline-block;
   background-color: var(--color-boton);
@@ -179,38 +104,31 @@ blockquote,
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
-  transition: background-color 0.3s ease;
-  font-family: "Work Sans", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btn:hover {
   background-color: var(--color-boton-hover);
+  transform: scale(1.05);
 }
 
-/* ---------------------------- */
-/* 🌅 FOOTER CON IMAGEN         */
-/* ---------------------------- */
-.footerimg {
-  background-image: url("assets/delamano.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  width: 100%;
-  position: relative;
-  isolation: isolate;
+/* Animación de frases */
+.frase {
+  animation: slide-in 0.5s ease-in-out;
 }
 
-.footerimg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--overlay-suave-footer);
-  z-index: 1;
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ---------------------------- */
-/* 👣 FOOTER FINAL              */
-/* ---------------------------- */
+/* Footer */
 footer {
   padding: 20px;
   background: var(--color-fondo-footer);
